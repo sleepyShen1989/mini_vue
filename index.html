@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <!-- <script src="./js/renderer/renderer.js"></script>
+    <script src="./js/renderer/renderer_demo.js"></script> -->
+
+    <!-- <script src="./js/reactive/reactive.js"></script>
+    <script src="./js/reactive/reactive_demo.js"></script> -->
+
+    <script src="./js/renderer/renderer.js"></script>
+    <script src="./js/reactive/reactive.js"></script>
+    <script src="./js/mini_vue.js"></script>
+    <script>
+        const App = {
+            data: reactive({
+                counter: 0
+            }),
+            render() {
+                return h("div", null, [
+                    h('h2', null, `${this.data.counter}`),
+                    h('button', {
+                        onClick: () => {
+                            this.data.counter++
+                        }
+                    } , '+1'),
+                ])
+            }
+        }
+
+        const app = createApp(App)
+        app.mount('#app')
+        
+    </script>
+</body>
+</html>
